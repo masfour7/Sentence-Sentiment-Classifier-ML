@@ -1,0 +1,78 @@
+{
+  "logreg": {
+    "key": "logreg",
+    "name": "Logistic Regression",
+    "accuracy": 0.8383333333333334,
+    "precision": 0.8327868852459016,
+    "recall": 0.8466666666666667,
+    "f1": 0.8396694214876033,
+    "train_seconds": 0.12273359298706055,
+    "confusion": [
+      [
+        249,
+        51
+      ],
+      [
+        46,
+        254
+      ]
+    ]
+  },
+  "linsvm": {
+    "key": "linsvm",
+    "name": "Linear SVM",
+    "accuracy": 0.8266666666666667,
+    "precision": 0.8202614379084967,
+    "recall": 0.8366666666666667,
+    "f1": 0.8283828382838284,
+    "train_seconds": 0.0486602783203125,
+    "confusion": [
+      [
+        245,
+        55
+      ],
+      [
+        49,
+        251
+      ]
+    ]
+  },
+  "knn": {
+    "key": "knn",
+    "name": "K-Nearest Neighbors",
+    "accuracy": 0.795,
+    "precision": 0.8,
+    "recall": 0.7866666666666666,
+    "f1": 0.7932773109243697,
+    "train_seconds": 0.047690629959106445,
+    "confusion": [
+      [
+        241,
+        59
+      ],
+      [
+        64,
+        236
+      ]
+    ]
+  },
+  "nb": {
+    "key": "nb",
+    "name": "Multinomial Naive Bayes",
+    "accuracy": 0.8216666666666667,
+    "precision": 0.8205980066445183,
+    "recall": 0.8233333333333334,
+    "f1": 0.8219633943427621,
+    "train_seconds": 0.04845237731933594,
+    "confusion": [
+      [
+        246,
+        54
+      ],
+      [
+        53,
+        247
+      ]
+    ]
+  }
+}

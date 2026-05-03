@@ -1,25 +1,31 @@
-# cs4563 ML Sentiment Classification Project
+# Sentiment Classifier — NLP Showcase
 
 ## Overview
-A machine learning project for customer sentiment analysis. Uses word embeddings (Word2Vec, FastText, Bag of Words) and multiple classifiers (Logistic Regression, KNN, SVM) to classify Amazon customer review sentiment.
+A polished sentiment analysis project (originally CS4563 @ NYU Tandon). It classifies short reviews as positive/negative using four classical ML models trained on the UCI Sentiment Labelled Sentences corpus, and serves an interactive Streamlit demo.
 
-Originally built for Google Colab. Runs as a Jupyter Notebook server in the Replit environment.
+## Architecture
+- **`app.py`** — Streamlit web demo on port 5000 (live predictions, model comparison, dataset explorer, "how it works")
+- **`train.py`** — CLI script to train all four models and persist them
+- **`src/sentiment/data.py`** — Dataset loading + shared `clean_text` preprocessing
+- **`src/sentiment/models.py`** — Pipeline definitions, training, inference (`predict_with_all`), feature explainability (`top_features`)
+- **`data/raw/`** — UCI dataset (Amazon, IMDB, Yelp .txt files, 1k each)
+- **`models/`** — Persisted joblib pipelines + `metrics.json`
+- **`MLProject_trainedw2v.ipynb`** — Original Colab notebook (kept for reference)
+- **`.streamlit/config.toml`** — Streamlit server config (port 5000, allow remote)
 
-## Project Structure
-- `MLProject_trainedw2v.ipynb` - Main Jupyter notebook with ML pipeline
-- `start_jupyter.sh` - Startup script for Jupyter server
-- `README.md` - Project description
+## Models
+Four scikit-learn pipelines (TF-IDF unigrams+bigrams → classifier):
+- Logistic Regression — best (~84% accuracy)
+- Linear SVM — ~83%
+- Multinomial Naive Bayes — ~82%
+- K-Nearest Neighbors (cosine) — ~80%
 
-## Running the Project
-The project runs as a Jupyter Notebook server on port 5000 via the "Start application" workflow.
+## Running
+- Workflow `Start application` runs `streamlit run app.py` on port 5000.
+- Retrain anytime via `python train.py`.
 
-## Dependencies
-Python packages (managed via pip/requirements.txt):
-- `jupyter`, `notebook` - Notebook server
-- `numpy`, `pandas`, `matplotlib` - Data science stack
-- `scikit-learn` - ML models (KNN, SVM, Logistic Regression, Naive Bayes)
-- `gensim` - Word2Vec embeddings
+## Deployment
+Configured for `vm` (always-running) since Streamlit holds an in-memory session.
 
-## Notes
-- The notebook was originally written for Google Colab and uses `google.colab.drive` for data loading. Those cells will need to be adapted to load data from local files when running outside of Colab.
-- Jupyter runs with no authentication token/password and all origins allowed for Replit proxy compatibility.
+## Dependencies (pyproject.toml)
+streamlit, scikit-learn, pandas, numpy, altair, joblib, matplotlib, gensim, jupyter/notebook (kept for the original notebook).

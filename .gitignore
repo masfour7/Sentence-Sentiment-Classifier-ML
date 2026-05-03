@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pythonlibs/
+.cache/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project artefacts
+# (models are intentionally tracked so the demo runs without retraining)
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
