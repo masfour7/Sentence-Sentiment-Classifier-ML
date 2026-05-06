@@ -87,6 +87,11 @@ The original notebook was built for Google Colab and mixed exploration, training
 - Wraps every model in a `Pipeline` so the saved artefact handles preprocessing and prediction together.
 - Adds a polished web demo so the project is something you can _try_, not just read.
 
+## 👤 Author
+
+**Mohammad Asfour** — CS student at NYU Tandon School of Engineering.
+Built as a course project for CS4563 (Introduction to Machine Learning), later refactored into this standalone showcase.
+
 ## 📜 License
 
 MIT — feel free to fork, learn from it, or build on top.

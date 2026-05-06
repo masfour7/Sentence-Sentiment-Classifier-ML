@@ -2,16 +2,22 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
-.pythonlibs/
-.cache/
 .venv/
 venv/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Project artefacts
-# (models are intentionally tracked so the demo runs without retraining)
+# Environment / tooling — never push these
+.replit
+replit.md
+uv.lock
+.local/
+.agents/
+.cache/
+.pythonlibs/
+.upm/
+prepare-for-github.sh
 
 # OS
 .DS_Store
